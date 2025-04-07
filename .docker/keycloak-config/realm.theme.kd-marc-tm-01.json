@@ -1,0 +1,43 @@
+{
+    "id": "kd-marc-team-01",
+    "realm": "kd-marc-team-01",
+    "displayName": "KD Marc 01",
+    "displayNameHtml": "<b>KD Marc</b> TM 01",
+    "registrationAllowed": false,
+    "registrationEmailAsUsername": false,
+    "rememberMe": false,
+    "loginWithEmailAllowed": false,
+    "resetPasswordAllowed": false,
+    "enabled": true,
+    "loginTheme": "kd-marc-team-01",
+    "identityProviders": [
+      {
+        "alias": "kd-marc",
+        "displayName": "KD Marc",
+        "providerId": "oidc",
+        "enabled": true,
+        "config": {
+          "syncMode": "LEGACY",
+          "clientSecret": "fake-secret",
+          "clientId": "fake-client-id"
+        }
+      }
+    ],
+    "users": [
+      {
+        "email": "${KEYCLOAK_ADMIN}@admin",
+        "username": "${KEYCLOAK_ADMIN}",
+        "firstName": "DevOps",
+        "lastName": "SRE",
+        "enabled": true,
+        "emailVerified": true,
+        "credentials": [
+          {
+            "temporary": false,
+            "type": "password",
+            "value": "${KEYCLOAK_ADMIN_PASSWORD}"
+          }
+        ]
+      }
+    ]
+  }
