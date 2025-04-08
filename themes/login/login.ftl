@@ -8,14 +8,14 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="${url.resourcesPath}/css/style.css" />
-  <link rel="text/javascript" href="${url.resourcesPath}/js/main.js" />
+  <script type="text/javascript" src="${url.resourcesPath}/js/main.js"></script>
 </head>
 
 <body class="login-page">
   <div class="login-card">
-    <div class="flex justify-end">
-      <label class="swap swap-rotate">
-        <input type="checkbox" id="theme-toggle" class="theme-controller" value="light"/>
+    <div class="theme-swapper">
+      <label class="theme-swapper-label">
+        <input type="checkbox" id="theme-toggle" class="theme-controller" value="light" />
         <!-- sun icon -->
         <svg class="swap-on fill-current w-6 h-6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
           <path d="M5 12a7 7 0 1114 0 7 7 0 01-14 0z" />
@@ -38,13 +38,13 @@
           <button type="button"
             class="idp-button"
             onclick="location.href='${url.loginAction}?kc_idp=${idp.alias}'">
-            <img src="./resources/assets/${idp.alias}.svg" alt="${idp.displayName}" class="w-5 h-5" />
+            <img src="${url.resourcesPath}/assets/${idp.alias}.svg" alt="${idp.displayName}" class="w-5 h-5" />
             ${idp.displayName}
           </button>
         </#list>
         <div class="divider-text">or</div>
       </#if>
-      <form id="kc-form-login" class="space-y-4" action="${url.loginAction}" method="post">
+      <form id="kc-form-login" class="form-container" action="${url.loginAction}" method="post">
         <#if message?has_content>
           <div class="form-error">
             ${message.summary}
@@ -84,6 +84,7 @@
         </a>
       </p>
   </div>
+  <script rel="text/javascript" href="${url.resourcesPath}/js/main.js"></script>
 </body>
 
 </html>

@@ -1,0 +1,146 @@
+@import "tailwindcss";
+@plugin "daisyui";
+
+@layer base {
+
+  p,
+  div {
+    @apply text-gray-900;
+  }
+}
+
+.theme-swapper {
+  @apply flex justify-end;
+}
+
+.theme-swapper-label {
+  @apply swap swap-rotate;
+}
+
+.login-page {
+  @apply min-h-screen bg-gray-50 flex justify-center;
+}
+
+.login-card {
+  @apply w-full max-w-md p-6 space-y-6;
+}
+
+.login-title {
+  @apply text-3xl font-semibold;
+}
+
+.login-highlight {
+  @apply text-primary;
+}
+
+.login-description {
+  @apply text-sm text-center text-gray-600;
+}
+
+.idp-button {
+  @apply rounded-xl h-14 btn w-full border border-gray-300 text-gray-800 flex items-center justify-center gap-2;
+}
+
+.divider-text {
+  @apply divider text-gray-400 text-sm;
+}
+
+.form-label {
+  @apply label;
+}
+
+.form-input {
+  @apply rounded-xl h-14 input w-full border-gray-300 bg-transparent placeholder-gray-500;
+}
+
+.form-link {
+  @apply text-sm text-primary hover:underline;
+}
+
+.form-error {
+  @apply alert alert-error text-sm;
+}
+
+.form-submit {
+  @apply rounded-xl h-14 btn btn-primary w-full;
+}
+
+.form-footer {
+  @apply text-sm text-center;
+}
+
+.form-footer-link {
+  @apply text-primary font-semibold hover:underline;
+}
+
+.form-container {
+  @apply space-y-6;
+}
+
+.stepper-wrapper {
+  @apply flex items-center mb-6;
+}
+
+.step {
+  @apply w-1/2 text-center;
+}
+
+.step-active {
+  @apply text-blue-600 font-bold;
+}
+
+.step-active>.step-number {
+  @apply bg-blue-500;
+}
+
+.step-number {
+  @apply rounded-full bg-gray-300 text-white w-6 h-6 mx-auto flex items-center justify-center;
+}
+
+.step-line {
+  @apply w-1/2 border-t-2 border-gray-300;
+}
+
+.gender-options {
+  @apply flex gap-4 mt-2;
+}
+
+.checkbox-group {
+  @apply mt-4;
+}
+
+.checkbox-group label {
+  @apply flex items-center gap-2;
+}
+
+.button-group {
+  @apply flex justify-between mt-6;
+}
+
+.btn-primary {
+  @apply rounded-xl h-14 btn btn-primary;
+}
+
+.btn-outline {
+  @apply btn btn-ghost;
+}
+
+.btn-back {
+  @apply btn btn-ghost;
+}
+
+.form-step {
+  @apply grid gap-4;
+}
+
+.hidden {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+  height: 0;
+  overflow: hidden;
+}
+
+.focus-error {
+  @apply input-error;
+}

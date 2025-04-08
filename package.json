@@ -1,16 +1,13 @@
 {
   "name": "keycloak-stepper-theme",
   "version": "1.0.0",
-  "main": "main.ts",
+  "type": "module",
   "scripts": {
-    "build:css": "tailwindcss -i ./src/css/login.css -o ./themes/login/resources/css/style.css --minify",
-    "build:ts": "tsc",
-    "build": "npm run build:css && npm run build:ts"
+    "build": "vite build"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "type": "commonjs",
   "description": "",
   "devDependencies": {
     "@tailwindcss/cli": "^4.1.3",
@@ -19,7 +16,8 @@
     "daisyui": "^5.0.15",
     "postcss": "^8.5.3",
     "tailwindcss": "^4.1.3",
-    "typescript": "^5.8.3"
+    "typescript": "^5.8.3",
+    "vite": "^6.2.5"
   },
   "packageManager": "yarn@1.22.22+sha512.a6b2f7906b721bba3d67d4aff083df04dad64c399707841b7acf00f6b133b7ac24255f2652fa22ae3534329dc6180534e98d17432037ff6fd140556e2bb3137e"
 }
