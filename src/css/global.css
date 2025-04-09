@@ -4,8 +4,8 @@
 @layer base {
 
   p,
-  div {
-    @apply text-gray-900;
+  label {
+    @apply text-gray-900 dark:text-gray-50;
   }
 }
 
@@ -14,11 +14,11 @@
 }
 
 .theme-swapper-label {
-  @apply swap swap-rotate;
+  @apply swap swap-rotate dark:text-gray-900 text-gray-50;
 }
 
 .login-page {
-  @apply min-h-screen bg-gray-50 flex justify-center;
+  @apply min-h-screen bg-gray-50 flex justify-center dark:bg-transparent
 }
 
 .login-card {
@@ -45,12 +45,8 @@
   @apply divider text-gray-400 text-sm;
 }
 
-.form-label {
-  @apply label;
-}
-
 .form-input {
-  @apply rounded-xl h-14 input w-full border-gray-300 bg-transparent placeholder-gray-500;
+  @apply rounded-xl h-14 input w-full border-gray-300 bg-transparent placeholder-gray-500 focus:outline-primary;
 }
 
 .form-link {
@@ -70,7 +66,7 @@
 }
 
 .form-footer-link {
-  @apply text-primary font-semibold hover:underline;
+  @apply text-primary dark:text-primary font-semibold hover:underline;
 }
 
 .form-container {
@@ -86,7 +82,7 @@
 }
 
 .step-active {
-  @apply text-blue-600 font-bold;
+  @apply  text-primary font-bold;
 }
 
 .step-active>.step-number {
@@ -103,6 +99,10 @@
 
 .gender-options {
   @apply flex gap-4 mt-2;
+}
+
+.radio {
+  @apply radio checked:text-blue-600 checked:border-blue-600
 }
 
 .checkbox-group {
@@ -142,5 +142,5 @@
 }
 
 .focus-error {
-  @apply input-error;
+  @apply input-error radio-error;
 }

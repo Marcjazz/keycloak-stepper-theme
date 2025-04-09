@@ -17,9 +17,7 @@ export const stepperFormEventHandler = () => {
     for (const input of step1Inputs) {
       if (!input.checkValidity()) {
         allValid = false
-        if (input.type == 'radio') {
-          input.classList.add('radio-error')
-        } else input.classList.add('focus-error')
+        input.classList.add('focus-error')
         input.reportValidity()
         break
       }

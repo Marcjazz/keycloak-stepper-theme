@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="${locale}" data-theme="light">
+<html lang="${locale}" data-theme="dark">
 
 <head>
     <title>
@@ -15,7 +15,7 @@
     <div class="login-card">
         <div class="theme-swapper">
             <label class="theme-swapper-label">
-                <input type="checkbox" id="theme-toggle" class="theme-controller" value="light" />
+                <input type="checkbox" id="theme-toggle" class="theme-controller" value="dark" />
                 <!-- sun icon -->
                 <svg class="swap-on fill-current w-6 h-6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
                     <path d="M5 12a7 7 0 1114 0 7 7 0 01-14 0z" />
@@ -49,53 +49,58 @@
                     </div>
                 </div>
             </div>
+            <#if message?has_content>
+                <div class="form-error">
+                    ${message.summary}
+                </div>
+            </#if>
             <!-- Step 1 -->
             <div class="form-step" id="step-1">
                 <div class="form-control">
-                    <label>
+                    <label for="firstName" class="label">
                         ${msg("firstName")}
                     </label>
-                    <input class="form-input" type="text" name="firstName" required />
+                    <input class="form-input" type="text" name="firstName" required autofocus
+                        placeholder="${msg("firstName")}" value="${(register.firstName)!''}" />
                 </div>
                 <div class="form-control">
-                    <label>
+                    <label for="lastName" class="label">
                         ${msg("lastName")}
                     </label>
-                    <input class="form-input" type="text" name="lastName" required />
+                    <input class="form-input" type="text" name="lastName" required
+                        placeholder="${msg("lastName")}" value="${(register.lastName)!''}" />
                 </div>
                 <div class="form-control">
-                    <label>
+                    <label for="gender" class="label">
                         ${msg("gender")}
                     </label>
                     <div class="gender-options">
-                        <label><input class="radio" type="radio" name="gender" value="male" required />
+                        <label class="label"><input class="radio" type="radio" name="profile.attributes.gender" value="male" required />
                             ${msg("genderMale")}
                         </label>
-                        <label><input class="radio" type="radio" name="gender" value="female" />
+                        <label class="label"><input class="radio" type="radio" name="profile.attributes.gender" value="female" />
                             ${msg("genderFemale")}
                         </label>
-                        <label><input class="radio" type="radio" name="gender" value="other" />
+                        <label class="label"><input class="radio" type="radio" name="profile.attributes.gender" value="other" />
                             ${msg("genderOther")}
                         </label>
                     </div>
                 </div>
                 <div class="form-control">
-                    <label>
-                        ${msg("email")}
-                    </label>
-                    <input class="form-input" type="email" name="email" required />
-                </div>
-                <div class="form-control">
-                    <label>
+                    <label for="dob" class="label">
                         ${msg("dob")!"Date of Birth"}
                     </label>
-                    <input class="form-input" type="date" name="dob" required />
+                    <input id="dob" class="form-input" type="date" name="profile.attributes.dob" required
+                        value="${(register['profile.attributes.dob']
+)!''}" />
                 </div>
                 <div class="form-control">
-                    <label>
+                    <label for="phoneNumber" class="label">
                         ${msg("phoneNumber")!"Phone Number"}
                     </label>
-                    <input class="form-input" type="tel" name="phoneNumber" required />
+                    <input id="phoneNumber" class="form-input" type="tel" name="profile.attributes.phoneNumber" required placeholder="${msg("phoneNumber")}"
+                        value="${(register['profile.attributes.phoneNumber']
+)!''}" />
                 </div>
                 <div class="button-group">
                     <a href="${url.loginUrl}" class="btn-back">
@@ -109,30 +114,38 @@
             <!-- Step 2 -->
             <div class="form-step hidden" id="step-2">
                 <div class="form-control">
-                    <label>
+                    <label for="username" class="label">
                         ${msg("username")}
                     </label>
-                    <input class="form-input" type="text" name="username" required />
+                    <input id="username" name="username" type="text" class="form-input" required
+                        placeholder="${msg("username")}" value="${(register.username)!''}" />
                 </div>
                 <div class="form-control">
-                    <label>
+                    <label for="email" class="label">
+                        ${msg("email")}
+                    </label>
+                    <input id="email" name="email" type="email" class="form-input" required
+                        placeholder="${msg("email")}" value="${(register.email)!''}" />
+                </div>
+                <div class="form-control">
+                    <label for="password" class="label">
                         ${msg("password")}
                     </label>
-                    <input class="form-input" type="password" name="password" required />
+                    <input id="password" class="form-input" type="password" name="password" required
+                        placeholder="${msg("password")}" />
                 </div>
-                <div class="form-control checkbox-group">
-                    <label>
-                        <input type="checkbox" name="terms" required />
-                        <a href="${url.loginResetCredentialsUrl}" class="form-link">
-                            ${msg("acceptTerms")!"Accept our and partners' terms and conditions"}
-                        </a>
+                <div class="form-control">
+                    <label for="password-confirm" class="label">
+                        ${msg("passwordConfirm")}
                     </label>
+                    <input id="password-confirm" class="form-input" type="password" name="password-confirm" required
+                        placeholder="${msg("passwordConfirm")}" />
                 </div>
                 <div class="button-group">
                     <button type="button" id="prevBtn" class="btn-outline">
                         ${msg("doBack")}
                     </button>
-                    <button type="submit" class="btn-primary">
+                    <button type="submit" class="btn-primary" value="${msg("doRegister")}">
                         ${msg("doRegister")}
                     </button>
                 </div>

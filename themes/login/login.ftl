@@ -84,7 +84,6 @@
         </a>
       </p>
   </div>
-  <script rel="text/javascript" href="${url.resourcesPath}/js/main.js"></script>
 </body>
 
 </html>

@@ -1,4 +1,4 @@
-import "./css/global.css";
+import './css/global.css'
 import { stepperFormEventHandler } from './stepper'
 
 console.log('Loading page content...')
@@ -18,6 +18,9 @@ document.addEventListener('DOMContentLoaded', () => {
     })
   }
 
-  // handles stepper logic
-  stepperFormEventHandler()
+  // handles keycloak submission stepper logic
+  const form = document.getElementById('kc-register-form') as HTMLFormElement
+  if (form) {
+    stepperFormEventHandler()
+  }
 })
